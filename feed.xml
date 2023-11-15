@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-15T11:20:50-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Project Web Page</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">CMU 15618 Final Project</title><link href="http://localhost:4000/project/2023/11/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="CMU 15618 Final Project" /><published>2023-11-15T11:10:22-05:00</published><updated>2023-11-15T11:10:22-05:00</updated><id>http://localhost:4000/project/2023/11/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/project/2023/11/15/welcome-to-jekyll.html"><![CDATA[<h1 id="lock-free-cuckoo-filter">Lock-free Cuckoo Filter</h1>
+
+<h3 id="team-members">Team members</h3>
+
+<p><strong>Yifei Wang</strong> (yifeiw3), <strong>Yuchen Wang</strong> (yw7)</p>
+
+<h3 id="url">URL</h3>
+
+<p><a href="https://xsxszab.github.io/">https://xsxszab.github.io/</a></p>
+
+<h3 id="summary">Summary</h3>
+<p>In this project, we are going to implement a lock-free version of the Cuckoo Filter introduced in [2]. The lock-free filter will be benchmarked against its coarse-grained and fine-grained locked counterparts for performance evaluation.</p>
+
+<h3 id="background">Background</h3>
+
+<p>The Approximate Membership Query Filter (AMQ-Filter) is a probabilistic data structure designed to determine whether a specific item belongs to a set with a certain false positive rate. The widely adopted Bloom Filter, employed in systems such as caches, routers, and databases, faces a drawback: it lacks efficiency in removing items from the set.</p>
+
+<p>To overcome this limitation, [2] introduced the Cuckoo Filter, a novel AMQ-Filter leveraging the Cuckoo Hash Table. This alternative not only addresses the inefficiency in item deletion but also demonstrates superior efficiency in queries compared to the Bloom Filter.</p>
+
+<p>Given the prevalent use of AMQ-Filters in high-concurrency environments, our project aims to implement a fully concurrent version of the Cuckoo Filter capable of supporting multi-threaded access. Our approach involves leveraging lock-free programming to achieve a substantial performance boost when compared to both coarse-grained and fine-grained locked versions.</p>
+
+<h3 id="the-challenge">The Challenge</h3>
+
+<p>The most challenging part of our project is writing a correct lock-free version of the filter. Specifically, the displacement operation during item insertion is the most difficult part to handle. We need to design a correct and efficient way to manage items items displaced but not yet reinserted into the hash table. In other words, as an item awaits reinsertion into the hash table, filter users (query threads) should be able to ascertain its existence.</p>
+
+<h3 id="resources">Resources</h3>
+<ul>
+  <li><strong>Computing Resources</strong>: We plan to use our laptops and GHC machines for this project.</li>
+  <li><strong>Code Base</strong>: We will start from scratch to implement the cuckoo filter in C++, without using any starter code. In addition, we found a 15618 project in Spring 2017 that implements lock-free cuckoo hashing, which bears some similarity to what we plan to implement. We will not use any part of their code for our project.</li>
+  <li><strong>Reference materials</strong>: Please refer to the References Section below (this may not be a comprehensive list, we may refer to new books or papers during the project).</li>
+</ul>
+
+<h3 id="goals-and-deliverables">Goals and Deliverables</h3>
+
+<p><strong>Plan to Achieve</strong>:</p>
+
+<ul>
+  <li>Implement a functional, correct Lock-free Cuckoo Filter. This goal must be achieved since the filter is the core part of our project.</li>
+  <li>Implement both corse-grained and fine-grained locked version of the cuckoo filter, and compare their performance with our lock-free version under different access patterns.</li>
+</ul>
+
+<p><strong>Hope to Achieve</strong>:</p>
+
+<ul>
+  <li>Implement the semi-sorting technique mentioned in [2] for space optimization. Since this part will make the filter’s code structure significantly more complex, we will only try to implement it after the basic version of cuckoo filter is finished.</li>
+  <li>Accelerate the filter through utilizing SIMD instructions.</li>
+  <li>Provide a Python wrapper for the cuckoo filter using pybind11.</li>
+</ul>
+
+<h3 id="platform-choice">Platform Choice</h3>
+
+<p>We will implement the cuckoo filter in C++ on Linux platforms (our laptop &amp; GHC machines). We are both familiar with C++ programming so using it would likely result in high productivity.</p>
+
+<h3 id="schedule">Schedule</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>TASKS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11/16 - 11/22</td>
+      <td>Paper Reading &amp; Implement coarse-grained locked version of the Cuckoo Filter</td>
+    </tr>
+    <tr>
+      <td>11/23 - 11/29</td>
+      <td>Implement fine-grained locked Cuckoo Filter &amp; start to implement the lock-free version</td>
+    </tr>
+    <tr>
+      <td>11/30 - 12/7</td>
+      <td>Finish lock-free version, write milestone report</td>
+    </tr>
+    <tr>
+      <td>12/8- 12/14</td>
+      <td>Debugging and optimization, write final report, create posters</td>
+    </tr>
+    <tr>
+      <td>12/15</td>
+      <td>Poster Session</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="references">References</h3>
+<p>[1] N. Nguyen and P. Tsigas, “Lock-Free Cuckoo Hashing,” 2014 IEEE 34th International Conference on Distributed Computing Systems, Madrid, Spain, 2014, pp. 627-636.</p>
+
+<p>[2] Fan, Bin, et al. “Cuckoo filter: Practically better than bloom.” Proceedings of the 10th ACM International on Conference on emerging Networking Experiments and Technologies. 2014.</p>]]></content><author><name></name></author><category term="project" /><summary type="html"><![CDATA[Lock-free Cuckoo Filter]]></summary></entry></feed>
