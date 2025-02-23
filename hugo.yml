@@ -3,13 +3,15 @@ languageCode: en-us
 title: Yifei Wang Blog
 theme: PaperMod
 enableEmoji: true
+googleAnalytics: G-9D8LCL2WG2
 
 params:
     env: production
     email: yifeiw203@gmail.com
     defaultTheme: auto
-    description: "ExampleSite description"
     author: ["Yifei Wang"]
+    ShowShareButtons: true
+
     assets: 
       disableHLJS: true 
       favicon: "assets/favicon.ico"
