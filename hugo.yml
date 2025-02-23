@@ -5,6 +5,7 @@ theme: PaperMod
 enableEmoji: true
 enableInlineShortcodes: true
 googleAnalytics: G-9D8LCL2WG2
+hasCJKLanguage: true
 
 module:
   mounts:
@@ -32,6 +33,10 @@ menu:
     name: Tags
     url: /tags/
     weight: 40
+  - identifier: archives
+    name: Archives
+    url: /archives/
+    weight: 50
 
 params:
     env: production
@@ -57,6 +62,6 @@ params:
         - name: linkedin
           url: https://www.linkedin.com/in/yifei--wang/
         - name: Email
-          url: 'yifeiw203@gmail.com'
+          url: 'mailto:yifeiw203@gmail.com'
         - name: Github
           url: 'https://github.com/xsxszab' 
