@@ -53,10 +53,23 @@ params:
       disableHLJS: true 
       favicon: "assets/favicon.ico"
       
-    homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: >-
-            Welcome to my website.
+    # homeInfoParams:
+    #     Title: "Hi there \U0001F44B"
+    #     Content: >-
+    #         Welcome to my website.
+
+    profileMode:
+      enabled: true
+      title: "Hi there \U0001F44B"
+      subtitle: "Name's Yifei Wang, welcome to my website!"
+      imageUrl: "/images/common/parrot.png" # optional
+      imageWidth: 125 # custom size
+      imageHeight: 125 # custom size
+      buttons:
+        - name: Take a Look at My Blogs
+          url: "/posts"
+        # - name: Github
+        #   url: "https://github.com/xsxszab"
 
     socialIcons:
         - name: linkedin

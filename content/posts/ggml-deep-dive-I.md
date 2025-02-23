@@ -4,11 +4,14 @@ Categories = ["Computer Science"]
 date = '2025-02-08T10:49:01-08:00'
 draft = false
 title = 'GGML Deep Dive I: Environment Setup'
+ShowToc = true
+[cover]
+image = "/images/common/ggml.png"
 +++
 
-{{< figure
+<!-- {{< figure
   src="/images/common/ggml.png"
->}}
+>}} -->
 
 ## Introduction
 

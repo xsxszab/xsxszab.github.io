@@ -4,11 +4,14 @@ Categories = ["Computer Science"]
 date = '2025-02-08T15:15:22-08:00'
 draft = false
 title = 'GGML Deep Dive II: Memory Management in Context-only Mode'
+ShowToc = true
+[cover]
+image = "/images/ggml-deep-dive-II/graph5.png"
 +++
 
-{{< figure
+<!-- {{< figure
   src="/images/common/ggml.png"
->}}
+>}} -->
 
 # Introduction
 

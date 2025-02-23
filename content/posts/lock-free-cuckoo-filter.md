@@ -4,6 +4,9 @@ Categories = ["Computer Science"]
 date = '2023-12-15T16:35:38-08:00'
 draft = false
 title = 'Lock Free Cuckoo Filter'
+ShowToc = true
+[cover]
+image = "/images/lock-free-cuckoo-filter/move.png"
 +++
 
 ## Contributors

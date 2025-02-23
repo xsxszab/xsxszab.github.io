@@ -4,11 +4,14 @@ Categories = ["Computer Science"]
 date = '2025-02-21T16:35:38-08:00'
 draft = false
 title = 'GGML Deep Dive IV: Computation in Context-only Mode, Part 2'
+ShowToc = true
+[cover]
+image = "/images/common/ggml.png"
 +++
 
-{{< figure
+<!-- {{< figure
   src="/images/common/ggml.png"
->}}
+>}} -->
 
 # Introduction
 
