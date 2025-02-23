@@ -61,7 +61,11 @@ params:
     profileMode:
       enabled: true
       title: "Hi there \U0001F44B"
-      subtitle: "Name's Yifei Wang, welcome to my website!"
+      # subtitle: "Name's Yifei Wang, welcome to my website!"
+      subtitle: |
+        Name's Yifei Wang, welcome to my website! I am:
+        * A Machine Learning Engineer interested in on-device LLMs and C++ programming.
+        * An amateur photographer who enjoys landscape and architectural photography.
       imageUrl: "/images/common/parrot.png" # optional
       imageWidth: 125 # custom size
       imageHeight: 125 # custom size
