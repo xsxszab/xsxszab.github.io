@@ -7,6 +7,12 @@ enableInlineShortcodes: true
 googleAnalytics: G-9D8LCL2WG2
 hasCJKLanguage: true
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 module:
   mounts:
   - source: assets
@@ -37,6 +43,10 @@ menu:
     name: Archives
     url: /archives/
     weight: 50
+  - identifier: search
+    name: Search
+    url: /search/
+    weight: 60
 
 params:
     env: production
