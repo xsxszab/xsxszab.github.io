@@ -10,13 +10,19 @@ params:
     defaultTheme: auto
     description: "ExampleSite description"
     author: ["Yifei Wang"]
-
+    assets: 
+      disableHLJS: true 
+      favicon: "assets/favicon.ico"
+      
     homeInfoParams:
         Title: "Hi there \U0001F44B"
         Content: >-
-            Welcome to my website.      
+            Welcome to my website.
+
     socialIcons:
+        - name: linkedin
+          url: https://www.linkedin.com/in/yifei--wang/
         - name: Email
           url: 'yifeiw203@gmail.com'
         - name: Github
-          url: 'https://github.com/xsxszab'
+          url: 'https://github.com/xsxszab' 
