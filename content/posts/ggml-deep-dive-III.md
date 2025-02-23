@@ -1,5 +1,6 @@
 +++
 Tags = [ "GGML", "C++" ]
+Categories = ["Computer Science"]
 date = '2025-02-18T16:17:28-08:00'
 draft = false
 title = 'GGML Deep Dive IV: Computation in Context-only Mode, Part 1'

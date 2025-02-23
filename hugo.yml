@@ -5,12 +5,43 @@ theme: PaperMod
 enableEmoji: true
 googleAnalytics: G-9D8LCL2WG2
 
+module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets
+
+menu:
+  main:
+  - identifier: home
+    name: Home
+    url: /
+    weight: 10
+  - identifier: posts
+    name: Blog
+    url: /posts/
+    weight: 20
+
+  - identifier: categories
+    name: Categories
+    url: /categories/
+    weight: 30
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: 40
+
 params:
     env: production
     email: yifeiw203@gmail.com
     defaultTheme: auto
     author: ["Yifei Wang"]
+    
+    ShowReadingTime: true
     ShowShareButtons: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
 
     assets: 
       disableHLJS: true 
