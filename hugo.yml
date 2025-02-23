@@ -3,6 +3,7 @@ languageCode: en-us
 title: Yifei Wang Blog
 theme: PaperMod
 enableEmoji: true
+enableInlineShortcodes: true
 googleAnalytics: G-9D8LCL2WG2
 
 module:
