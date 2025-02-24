@@ -66,7 +66,7 @@ Next, we compute the total memory required for various components of the computa
 
 A closer look at the hash table mask computation:
 
-```
+```c++
 typedef uint32_t ggml_bitset_t;
 static_assert(sizeof(ggml_bitset_t) == 4, "bitset_t constants must be updated");
 

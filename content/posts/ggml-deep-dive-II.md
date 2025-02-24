@@ -164,9 +164,9 @@ Recalling from the previous section, it is not hard to tell that `ggml_tensor *c
 
 For now, we’ll focus on three key fields of `ggml_tensor`:
 
-- `**data**`: A pointer to the start address of the actual tensor data. In this case, it points to one byte past the `ggml_tensor` struct itself.
-- `**ne**`: An array of size 4 that represents the number of elements in each dimension. We’ve already discussed its meaning—it defines the shape of the tensor, in this case it is `[2, 4, 1, 1]` .
-- `**nb**`: Another array of size 4. Similar to `ne`,but instead of storing number of elements like `ne`, it holds **the number of bytes for each dimension**. Since no quantization or alignment is applied in this case, `nb[i]` is simply calculated as:
+- `data`: A pointer to the start address of the actual tensor data. In this case, it points to one byte past the `ggml_tensor` struct itself.
+- `ne`: An array of size 4 that represents the number of elements in each dimension. We’ve already discussed its meaning—it defines the shape of the tensor, in this case it is `[2, 4, 1, 1]` .
+- `nb`: Another array of size 4. Similar to `ne`,but instead of storing number of elements like `ne`, it holds **the number of bytes for each dimension**. Since no quantization or alignment is applied in this case, `nb[i]` is simply calculated as:
 
 ```
 nb[0] = sizeof(float);
@@ -191,7 +191,7 @@ Finally, we copy the tensor data into `ggml_context` through `memcpy`, marking t
 >}}
 
 
-> Note: In this case, the tensor data is defined directly within the source code, so there is no need for GGUF file loading. However, in more complex examples, such as `*./examples/mnist*`, this step becomes essential.
+> Note: In this case, the tensor data is defined directly within the source code, so there is no need for GGUF file loading. However, in more complex examples, such as `./examples/mnist`, this step becomes essential.
 
 # Wrapping Up
 
