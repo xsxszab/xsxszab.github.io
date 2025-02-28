@@ -189,6 +189,10 @@ Finally, we copy and print the result tensor, which is a straightforward operati
 
 # Wrapping Up
 
-In this blog, we explored how computation works in backend mode. There are some interesting observations: for example, the `ggml_context` no longer plays a central role in GGML’s workflow. It isn't even passed to the backend; instead, `ggml_cgraph` is used. Now, through the `simple-ctx` and `simple-backend` examples, we have a nearly comprehensive understanding of GGML's workflow.
+In this blog, we explored how computation works in backend mode. There are some interesting observations:
 
-In the next post, I'll cover the remaining components, such as GGUF file reading using the `mnist` example. See you then!
+* All different backends can be interacted with a set of unified interface methods.
+* GGML allocates memory for tensors and the computational graph in backend buffers, rather than in `ggml_context`.
+* `ggml_context` no longer plays a central role in GGML’s workflow.
+
+Now, through the `simple-ctx` and `simple-backend` examples, we have a nearly comprehensive understanding of GGML's workflow. In the next post, I'll cover the remaining components, such as GGUF file reading using the `mnist` example. See you then!
