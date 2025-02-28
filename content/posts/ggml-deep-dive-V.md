@@ -117,6 +117,7 @@ struct ggml_gallocr {
     struct ggml_dyn_tallocr ** buf_tallocs; // [n_buffers]
     int n_buffers;
 
+    // Note: not the same hash set in ggml_cgraph
     struct ggml_hash_set hash_set;
     struct hash_node * hash_values; // [hash_set.size]
 
@@ -191,7 +192,7 @@ Finally, we copy and print the result tensor, which is a straightforward operati
 
 In this blog, we explored how computation works in backend mode. There are some interesting observations:
 
-* All different backends can be interacted with a set of unified interface methods.
+* All backends can be accessed through a unified set of interface methods (polymorphism in C programming).
 * GGML allocates memory for tensors and the computational graph in backend buffers, rather than in `ggml_context`.
 * `ggml_context` no longer plays a central role in GGML’s workflow.
 
