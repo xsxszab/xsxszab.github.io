@@ -61,7 +61,7 @@ params:
 
     assets: 
       disableHLJS: true 
-      favicon: "assets/favicon.ico"
+      favicon: "/favicon.ico"
       
     # homeInfoParams:
     #     Title: "Hi there \U0001F44B"
