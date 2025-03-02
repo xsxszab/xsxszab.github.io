@@ -7,6 +7,10 @@ enableInlineShortcodes: true
 googleAnalytics: G-9D8LCL2WG2
 hasCJKLanguage: true
 
+markup:
+  highlight:
+    style: paraiso-light
+
 outputs:
   home:
     - HTML
@@ -58,6 +62,7 @@ params:
     ShowShareButtons: true
     ShowPostNavLinks: true
     ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
 
     assets: 
       disableHLJS: true 
