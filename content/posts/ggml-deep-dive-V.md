@@ -182,6 +182,8 @@ Similiar operations are applied for leaf nodes, with the only difference being t
 
 Once memory allocation is complete, the final step is performing the actual computation. Let’s take a look at the `ggml_backend_graph_compute` function. Surprisingly (or sadly), it simply calls `backend->iface.graph_compute`, passing the computation task to backend-specific code. Since different backends handle this task in vastly different ways, I won’t dive into its implementation here.
 
+> TODO: Analyze the computation process of one backend.
+
 {{< figure
   src="/images/ggml-deep-dive-V/code11.png"
 >}}

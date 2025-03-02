@@ -23,7 +23,7 @@ This series will focus on the overall architecture and core logic of the GGML fr
 
 In this first post, we’ll begin with the fundamentals: setting up the development environment for source code reading. Let’s get started!
 
-*Note: GGML is actively evolving, and changes ranging from symbol renaming to large-scale refactoring can occur. This blog series is based on commit 475e012. For a smoother reading experience, it is highly recommended to use the same commit.*
+> Note: GGML is actively evolving, and changes ranging from symbol renaming to large-scale refactoring can occur. This blog series is based on commit 475e012. For a smoother reading experience, it is highly recommended to use the same commit.*
 
 ---
 
