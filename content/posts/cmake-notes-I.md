@@ -30,7 +30,7 @@ First things first—forget everything you know about scoping rules in programmi
 
 ### **Scope in Current CMakeLists**
 
-- By default, variables defined with `set(VAR value)` can be accessed in current CMakeLists after the lien they are defined.
+- By default, variables defined with `set(VAR value)` can be accessed in current CMakeLists after the line they are defined.
 ```cmake
 # Empty output. In CMake, accessing an undefined variable won't trigger any error
 message(STATUS "${TEST_VAR}")

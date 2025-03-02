@@ -40,7 +40,7 @@ Let’s take a look at the following graph, which illustrates the common framewo
 Some key notes:
 - The content in any `void* context` is highly backend-specific and normally you don't need to pay attention to them.
 - Each backend has three types of interfaces: `ggml_backend_i`, `ggml_backend_device_i`, and `ggml_backend_reg_i`.
-- GGML uses function pointers to implement polymorphism in C, a common technique in C programming.
+- GGML uses function pointers to implement polymorphism in C, a common technique in C programming. Specifically, structs like `ggml_backed` act as base classes, `void *context` contains child classes' additional member variables, and `iface` defines abstract methods.
 
 As we proceed, keep in mind that all interactions with backends happen through these three sets of interfaces. You don't need to read through the actual backend implementation for now.
 
