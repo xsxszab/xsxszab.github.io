@@ -203,8 +203,9 @@ endfunction()
   # If `outer_function` is commented out, running this script will result in error.
   ```
 
+---
   
-## Summary Table
+# Summary
 
 | Variable Type  | Global?                         | Visible in `add_subdirectory()`? | Affects Parent Scope when defined in functions? | Available in External Projects? | Persistent Across Runs? |
 | -------------- | ------------------------------- | -------------------------------- | ----------------------------------------------- | ------------------------------- | ----------------------- |
