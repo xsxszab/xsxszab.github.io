@@ -108,7 +108,11 @@ This step is a little bit tricky, let’s examine the thread pool initialization
 
 GGML implements a thread pool optimized for running computational graphs efficiently, with optimizations for NUMA architectures. If OpenMP is enabled, thread management is handled automatically, otherwise, GGML manually creates and manages `pthread`s.
 
-> A simple introduction to NUMA architecture can be found [here](https://en.wikipedia.org/wiki/Non-uniform_memory_access).
+> For a simple introduction to NUMA architecture, refer to the following slides from the CMU 15-418 course:
+
+{{< figure
+  src="/images/ggml-deep-dive-IV/numa.png"
+>}}
 
 First, let’s look at the part used by both OpenMP and non-OpenMP versions.
 
