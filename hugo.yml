@@ -67,6 +67,9 @@ params:
     assets: 
       disableHLJS: true 
       favicon: "/favicon.ico"
+      favicon16x16: "/favicon16x16.png"
+      favicon32x32: "/favicon32x32.png"
+      apple_touch_icon: "/apple-touch-icon.png"
       
     # homeInfoParams:
     #     Title: "Hi there \U0001F44B"
@@ -81,7 +84,7 @@ params:
         Name's Yifei Wang, welcome to my website! I am:
         * A Machine Learning Engineer interested in on-device LLMs and C++ programming.
         * An amateur photographer who enjoys landscape and architectural photography 🌄.
-      imageUrl: "/images/common/parrot.png" # optional
+      imageUrl: "/images/common/bird.png"
       imageWidth: 125 # custom size
       imageHeight: 125 # custom size
       buttons:
