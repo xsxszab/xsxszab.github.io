@@ -1,7 +1,7 @@
 +++
 Tags = [ "GGML", "C++" ]
 Categories = ["Computer Science"]
-date = '2025-03-07T17:13:23-08:00'
+date = '2025-03-07T15:13:23-08:00'
 draft = true # TODO: remember to unmark this once finished
 title = 'GGML Deep Dive VII: Tensor Representaion and In-memory Layout'
 [cover]
@@ -45,7 +45,6 @@ target_link_libraries(tensor-test PRIVATE ggml)
 4. In `examples/tensor-test`, create `main.cpp` , the following is a simple start point:
 ```c++
 #include "ggml.h"
-
 #include <iostream>
 
 void print_dim(ggml_tensor* tensor) {
@@ -58,7 +57,7 @@ void print_dim(ggml_tensor* tensor) {
 int main () {
     struct ggml_init_params params {
         /*.mem_size   =*/ 32 * 256 * 256,
-        /*.mem_buffer =*/ NULL,
+        /*.mem_buffer =*/ nullptr,
         /*.no_alloc   =*/ false,
     };
 
