@@ -1,8 +1,8 @@
 +++
 Tags = [ "GGML", "C++" ]
 Categories = ["Computer Science"]
-date = '2025-03-07T15:13:23-08:00'
-draft = true # TODO: remember to unmark this once finished
+date = '2025-03-07T17:15:23-08:00'
+draft = false
 title = 'GGML Deep Dive VII: Tensor Representaion and In-memory Layout'
 [cover]
 image = "/images/common/ggml.png"
@@ -200,4 +200,41 @@ ggml_tensor* after = ggml_permute(ctx, before, 0, 2, 1, 3);
 ---
 ## Tensor Views
 
+In some cases, allocating a unique memory block for every tensor is inefficient. Instead, GGML allows tensors to reuse memory through tensor views. Consider the following examples:
+
+- `Tensor B = Tensor A + 2`: Since Tensor A and B have the same shape and data type, Tensor B could reuse Tensor A’s memory block (although GGML disables in-place operations for `add` by default, this is just an illustrative example).
+- `ggml_cpy(ctx, A, B)`: This function copies Tensor A’s data into Tensor B. Instead of allocating new memory for the result, it simply reuses B’s existing memory block.
+
+In `ggml_tensor`, when a tensor does not allocate its own memory but instead references another tensor's memory, its `view_src` field points to the actual memory-owning tensor.
+
+For example, let's take a look at the operator `ggml_cpy`:
+
+{{< figure
+  src="/images/ggml-deep-dive-VII/code3.png"
+>}}
+
+In this case, Tensor C and Tensor B share the same memory region, yet they are represented as distinct tensors in the computational graph.
+
+#### **Do Tensor Views Always Have the Same Shape as the Source Tensor?**
+
+**No.** The shape of a view tensor is always smaller than or equal to the original tensor. This means a tensor view can reference a part of another tensor rather than the entire memory block.
+
+For example, in GPT-2 (`examples/gpt-2/main-ctx.cpp`), query (Q), key (K), and value (V) tensors are created using tensor views:
+```c++
+struct ggml_tensor* tensor_input = ggml_new_tensor_2d(ctx, GGML_TYPE_32, 768*3, seq_len);
+
+// Create a view tensor of shape (768, seq_len) with offset 0
+// The last parameter of ggml_view_2d specifies the view's offset (in bytes)
+struct ggml_tensor *Qcur = ggml_view_2d(ctx0, tensor_input, 768, seq_len, cur->nb[1], 0 * sizeof(float) * 768);
+
+// Create a view tensor of shape (768, seq_len) with offset 768
+struct ggml_tensor *Kcur = ggml_view_2d(ctx0, tensor_input, 768, seq_len, cur->nb[1], 1 * sizeof(float) * 768);
+
+// Create a view tensor of shape (768, seq_len) with offset 768 * 2
+struct ggml_tensor *Vcur = ggml_view_2d(ctx0, tensor_input, 768, seq_len, cur->nb[1], 2 * sizeof(float) * 768);
+```
+
+Here, Q, K, and V reference different parts of the same input tensor instead of allocating separate memory blocks.
+
 # Wrapping Up
+At this point, we've covered all the key aspects of GGML's model inference workflow (excluding its training pipeline), I’d say the "GGML Deep Dive" series is finished for now. In upcoming posts, I'll either (1) dive into GGML's CUDA tensor operator implementation or (2) start a new series on llama.cpp. See you then!
