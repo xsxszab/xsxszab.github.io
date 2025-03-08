@@ -3,7 +3,7 @@ Tags = [ "GGML", "C++" ]
 Categories = ["Computer Science"]
 date = '2025-03-07T17:15:23-08:00'
 draft = false
-title = 'GGML Deep Dive VII: Tensor Representaion and In-memory Layout'
+title = 'GGML Deep Dive VII: Tensor Representaion and Memory Layout'
 [cover]
 image = "/images/common/ggml.png"
 +++
