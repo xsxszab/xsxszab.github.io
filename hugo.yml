@@ -82,7 +82,7 @@ params:
       # subtitle: "Name's Yifei Wang, welcome to my website!"
       subtitle: |
         Name's Yifei Wang, welcome to my website! I am:
-        * A Machine Learning Engineer interested in on-device LLMs and C++ programming.
+        * A system engineer working on LLM inference optimization, building industry-scale LLM serving architectures.
         * An amateur photographer who enjoys landscape and architectural photography 🌄.
       imageUrl: "/images/common/bird.png"
       imageWidth: 125 # custom size
