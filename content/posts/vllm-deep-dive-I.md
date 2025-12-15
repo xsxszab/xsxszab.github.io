@@ -1,5 +1,5 @@
 +++
-Tags = [ "vLLM", "C++", "Python"]
+Tags = [ "vLLM", "Python"]
 Categories = ["Computer Science"]
 date = '2025-12-13T16:20:32-08:00'
 draft = false
@@ -61,8 +61,6 @@ from vllm import LLM, SamplingParams
 prompts = [
     "Hello, my name is",
     "The president of the United States is",
-    "The capital of France is",
-    "The future of AI is",
 ]
 
 sampling_params = SamplingParams(temperature=0.8, top_p=0.95)
